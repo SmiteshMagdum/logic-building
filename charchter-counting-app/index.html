@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="myInput">
+    <p id="charchterCounting"></p>
+    <p id="wrodseCounting"></p>
+    <p id="SEntenceCounting"></p>
+
+    <script>
+        const inputData = document.getElementById('myInput');
+        const charchterCounting = document.getElementById('charchterCounting');
+        const wrodseCounting = document.getElementById('wrodseCounting');
+        const SentenceCounting = document.getElementById('SEntenceCounting');
+        
+        
+        inputData.addEventListener('input', function() {
+         const data = inputData.value
+         charchterCounting.innerHTML = "charchter:" + data.length
+         const words = data.split(' ')
+        //  console.log(words.length);
+         
+         const sentense = data.split(".")
+         const cleanedSentense =  sentense.filter(item =>  item !== "")
+         
+         SentenceCounting.innerHTML = "sentense: " + cleanedSentense.length
+        //  console.log(sentense);
+         
+         wrodseCounting.innerHTML = "wrods:" + words.length
+        })
+
+    </script>
+</body>
+</html>
